@@ -1,0 +1,16 @@
+description: GPIO-backed LED sensor
+
+compatible: "zephyr-course,led-sensor"
+
+include: sensor-device.yaml
+
+properties:
+  led-gpios:
+    type: phandle-array
+    required: true
+    description: GPIO connected to the LED
+
+  runtime-parameter:
+    type: int
+    default: 0
+    description: Value returned by sensor_channel_get

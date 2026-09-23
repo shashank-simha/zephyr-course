@@ -1,0 +1,8 @@
+config SENSOR_LED_SENSOR
+	bool "LED sensor driver"
+	default y
+	depends on GPIO
+	select SENSOR
+	help
+	  GPIO-backed sensor driver that turns the LED on during sample fetch
+	  and off when the sensor channel is read.
