@@ -80,3 +80,16 @@ static const struct sensor_driver_api led_sensor_api = {
 		CONFIG_SENSOR_INIT_PRIORITY, &led_sensor_api);
 
 DT_INST_FOREACH_STATUS_OKAY(LED_SENSOR_INIT)
+
+int led_sensor_set_runtime_parameter(const struct device *dev, int value)
+{
+	struct led_sensor_data *data;
+
+	if (dev == NULL || !device_is_ready(dev)) {
+		return -ENODEV;
+	}
+
+	data = dev->data;
+	data->runtime_parameter = value;
+	return 0;
+}
