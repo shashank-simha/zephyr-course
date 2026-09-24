@@ -1,8 +1,10 @@
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
 / {
 	led_sensor0: led_sensor_0 {
 		compatible = "zephyr-course,led-sensor";
 		led-gpios = <&gpiog 13 GPIO_ACTIVE_HIGH>;
-		runtime-parameter = 42;
+		runtime-parameter = <42>;
 		status = "okay";
 	};
 

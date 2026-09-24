@@ -24,6 +24,8 @@ int main(void)
             return 0;
         }
 
+        k_msleep(SLEEP_TIME_MS);
+
         if (sensor_channel_get(led_sensor, SENSOR_CHAN_ALL, &value) < 0) {
             LOG_ERR("LED sensor channel get failed");
             return 0;
